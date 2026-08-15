@@ -1,0 +1,100 @@
+[0.000000] (-) TimerEvent: {}
+[0.000327] (arm_control) JobQueued: {'identifier': 'arm_control', 'dependencies': OrderedDict()}
+[0.002168] (can_controller) JobQueued: {'identifier': 'can_controller', 'dependencies': OrderedDict()}
+[0.002271] (can_interfaces) JobQueued: {'identifier': 'can_interfaces', 'dependencies': OrderedDict()}
+[0.002426] (drive_commands) JobQueued: {'identifier': 'drive_commands', 'dependencies': OrderedDict()}
+[0.002499] (arm_control) JobStarted: {'identifier': 'arm_control'}
+[0.035263] (can_controller) JobStarted: {'identifier': 'can_controller'}
+[0.046590] (can_interfaces) JobStarted: {'identifier': 'can_interfaces'}
+[0.058396] (drive_commands) JobStarted: {'identifier': 'drive_commands'}
+[0.099453] (-) TimerEvent: {}
+[0.200081] (-) TimerEvent: {}
+[0.300854] (-) TimerEvent: {}
+[0.401987] (-) TimerEvent: {}
+[0.502568] (-) TimerEvent: {}
+[0.603131] (-) TimerEvent: {}
+[0.703662] (-) TimerEvent: {}
+[0.804334] (-) TimerEvent: {}
+[0.904877] (-) TimerEvent: {}
+[1.005454] (-) TimerEvent: {}
+[1.059258] (can_interfaces) JobProgress: {'identifier': 'can_interfaces', 'progress': 'cmake'}
+[1.061152] (can_interfaces) JobProgress: {'identifier': 'can_interfaces', 'progress': 'build'}
+[1.062309] (can_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces', '--', '-j16', '-l16'], 'cwd': '/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces', 'env': OrderedDict({'LESSOPEN': '| /usr/bin/lesspipe %s', 'IGN_IP': '127.0.0.1', 'GZ_SIM_RESOURCE_PATH': '/home/ritvik/gazebo_models', 'LANGUAGE': 'en_IN:en', 'USER': 'ritvik', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'SALT_LICENSE_SERVER': '/home/ritvik/.altera.quartus/questa_lic.dat', 'STM32CubeMX_PATH': '/home/ritvik/STM32CubeMX', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/ritvik', 'DESKTOP_SESSION': 'gnome', 'ROS_PYTHON_VERSION': '3', 'GTK_MODULES': 'gail:atk-bridge', 'MANAGERPID': '2520', 'SYSTEMD_EXEC_PID': '3011', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'QSYS_ROOTDIR': '/home/ritvik/Documents/Quartus/quartus_install/quartus/sopc_builder/bin', 'TERMINATOR_DBUS_NAME': 'net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3', 'GIO_LAUNCHED_DESKTOP_FILE_PID': '4708', 'GNOME_KEYRING_CONTROL': '/run/user/1000/keyring', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/ritvik/rover_arm_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'ritvik', 'SALT_LICENSE_FILE': ';/home/ritvik/.altera.quartus/questa_lic.dat', 'JOURNAL_STREAM': '9:19310', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/session.slice/org.gnome.SettingsDaemon.MediaKeys.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'ritvik', 'STM32_PRG_PATH': '/home/ritvik/STMicroelectronics/STM32Cube/STM32CubeProgrammer/binexport', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/bin:/home/ritvik/.cargo/bin:/home/ritvik/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/usr/local/MATLAB/R2025b/bin', 'SESSION_MANAGER': 'local/ritvik-ROG-Zephyrus-G14-GA403UM-GA403UM:@/tmp/.ICE-unix/2770,unix/ritvik-ROG-Zephyrus-G14-GA403UM-GA403UM:/tmp/.ICE-unix/2770', 'INVOCATION_ID': 'e2f8a48ace4a44668db35ffc2f5d798b', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_SETUP_DISPLAY': ':1', 'LM_LICENSE_FILE': '/home/ritvik/Documents/Licenses/questa_license.dat', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'TERMINATOR_DBUS_PATH': '/net/tenshu/Terminator2', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'GNOME', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'gnome', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.69M2T3', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/ritvik/rover_arm_ws/install/rover_arm_desc:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'TERMINATOR_UUID': 'urn:uuid:441e77d8-83d1-40ec-a212-cffa43b545c1', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'gnome', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-gnome:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/ritvik/rover_arm_ws/install/rover_arm_desc:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/opt/ros/jazzy'}), 'shell': False}
+[1.105779] (-) TimerEvent: {}
+[1.174369] (can_interfaces) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[1.205941] (-) TimerEvent: {}
+[1.306587] (-) TimerEvent: {}
+[1.407138] (-) TimerEvent: {}
+[1.464157] (can_interfaces) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)\n'}
+[1.472794] (can_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.507318] (-) TimerEvent: {}
+[1.579702] (can_interfaces) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.607512] (-) TimerEvent: {}
+[1.675446] (can_interfaces) StdoutLine: {'line': b'-- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)\n'}
+[1.707657] (-) TimerEvent: {}
+[1.808122] (-) TimerEvent: {}
+[1.908562] (-) TimerEvent: {}
+[2.009146] (-) TimerEvent: {}
+[2.093095] (can_interfaces) StderrLine: {'line': b'\x1b[31mCMake Error at /opt/ros/jazzy/share/rosidl_adapter/cmake/rosidl_adapt_interfaces.cmake:57 (message):\n'}
+[2.093790] (can_interfaces) StderrLine: {'line': b'  execute_process(/usr/bin/python3 -m rosidl_adapter --package-name\n'}
+[2.094137] (can_interfaces) StderrLine: {'line': b'  can_interfaces --arguments-file\n'}
+[2.094511] (can_interfaces) StderrLine: {'line': b'  /home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter__arguments__can_interfaces.json\n'}
+[2.094809] (can_interfaces) StderrLine: {'line': b'  --output-dir\n'}
+[2.095095] (can_interfaces) StderrLine: {'line': b'  /home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces\n'}
+[2.095344] (can_interfaces) StderrLine: {'line': b'  --output-file\n'}
+[2.095578] (can_interfaces) StderrLine: {'line': b'  /home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces.idls)\n'}
+[2.095839] (can_interfaces) StderrLine: {'line': b'  returned error code 1:\n'}
+[2.096101] (can_interfaces) StderrLine: {'line': b'\n'}
+[2.096345] (can_interfaces) StderrLine: {'line': b"  Error processing 'int32 explicit_mag_FL' of\n"}
+[2.096599] (can_interfaces) StderrLine: {'line': b"  'can_interfaces/MobilitySensorData': ''explicit_mag_FL' is an invalid field\n"}
+[2.096861] (can_interfaces) StderrLine: {'line': b"  name.  It should have the pattern '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$''\n"}
+[2.097119] (can_interfaces) StderrLine: {'line': b'\n'}
+[2.097356] (can_interfaces) StderrLine: {'line': b'  Traceback (most recent call last):\n'}
+[2.097615] (can_interfaces) StderrLine: {'line': b'\n'}
+[2.097890] (can_interfaces) StderrLine: {'line': b'    File "<frozen runpy>", line 198, in _run_module_as_main\n'}
+[2.098135] (can_interfaces) StderrLine: {'line': b'    File "<frozen runpy>", line 88, in _run_code\n'}
+[2.098374] (can_interfaces) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/__main__.py", line 19, in <module>\n'}
+[2.098622] (can_interfaces) StderrLine: {'line': b'      sys.exit(main())\n'}
+[2.098889] (can_interfaces) StderrLine: {'line': b'               ^^^^^^\n'}
+[2.099135] (can_interfaces) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/main.py", line 53, in main\n'}
+[2.099382] (can_interfaces) StderrLine: {'line': b'      abs_idl_file = convert_to_idl(\n'}
+[2.099631] (can_interfaces) StderrLine: {'line': b'                     ^^^^^^^^^^^^^^^\n'}
+[2.099890] (can_interfaces) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/__init__.py", line 19, in convert_to_idl\n'}
+[2.100140] (can_interfaces) StderrLine: {'line': b'      return convert_msg_to_idl(\n'}
+[2.100384] (can_interfaces) StderrLine: {'line': b'             ^^^^^^^^^^^^^^^^^^^\n'}
+[2.100608] (can_interfaces) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/msg/__init__.py", line 28, in convert_msg_to_idl\n'}
+[2.100873] (can_interfaces) StderrLine: {'line': b'      msg = parse_message_string(package_name, input_file.stem, content)\n'}
+[2.101121] (can_interfaces) StderrLine: {'line': b'            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n'}
+[2.101370] (can_interfaces) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/parser.py", line 520, in parse_message_string\n'}
+[2.101613] (can_interfaces) StderrLine: {'line': b'      fields.append(Field(\n'}
+[2.101872] (can_interfaces) StderrLine: {'line': b'                    ^^^^^^\n'}
+[2.102112] (can_interfaces) StderrLine: {'line': b'    File "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_adapter/parser.py", line 355, in __init__\n'}
+[2.102353] (can_interfaces) StderrLine: {'line': b'      raise NameError(\n'}
+[2.102593] (can_interfaces) StderrLine: {'line': b'\n'}
+[2.102862] (can_interfaces) StderrLine: {'line': b"  NameError: 'explicit_mag_FL' is an invalid field name.  It should have the\n"}
+[2.103133] (can_interfaces) StderrLine: {'line': b"  pattern '^(?!.*__)(?!.*_$)[a-z][a-z0-9_]*$'\n"}
+[2.103375] (can_interfaces) StderrLine: {'line': b'\n'}
+[2.103618] (can_interfaces) StderrLine: {'line': b'Call Stack (most recent call first):\n'}
+[2.103884] (can_interfaces) StderrLine: {'line': b'  /opt/ros/jazzy/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:132 (rosidl_adapt_interfaces)\n'}
+[2.104131] (can_interfaces) StderrLine: {'line': b'  CMakeLists.txt:16 (rosidl_generate_interfaces)\n'}
+[2.104386] (can_interfaces) StderrLine: {'line': b'\n'}
+[2.104632] (can_interfaces) StderrLine: {'line': b'\x1b[0m\n'}
+[2.104898] (can_interfaces) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[2.109264] (-) TimerEvent: {}
+[2.110580] (can_interfaces) StderrLine: {'line': b'gmake: *** [Makefile:1099: cmake_check_build_system] Error 1\n'}
+[2.116628] (can_interfaces) CommandEnded: {'returncode': 2}
+[2.158221] (can_interfaces) JobEnded: {'identifier': 'can_interfaces', 'rc': 2}
+[2.209451] (-) TimerEvent: {}
+[2.310022] (-) TimerEvent: {}
+[2.410517] (-) TimerEvent: {}
+[2.511023] (-) TimerEvent: {}
+[2.611562] (-) TimerEvent: {}
+[2.712155] (-) TimerEvent: {}
+[2.812701] (-) TimerEvent: {}
+[2.913314] (-) TimerEvent: {}
+[3.013950] (-) TimerEvent: {}
+[3.082198] (can_controller) JobEnded: {'identifier': 'can_controller', 'rc': 'SIGINT'}
+[3.114105] (-) TimerEvent: {}
+[3.116430] (drive_commands) JobEnded: {'identifier': 'drive_commands', 'rc': 'SIGINT'}
+[3.127458] (arm_control) JobEnded: {'identifier': 'arm_control', 'rc': 'SIGINT'}
+[3.138944] (-) EventReactorShutdown: {}

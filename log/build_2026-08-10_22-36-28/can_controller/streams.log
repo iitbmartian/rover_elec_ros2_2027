@@ -1,0 +1,24 @@
+[2.675s] Invoking command in '/home/ritvik/Documents/MRT_ROS_WS/src/can_controller': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ritvik/Documents/MRT_ROS_WS/build/can_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ritvik/Documents/MRT_ROS_WS/install/can_controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/can_controller build --build-base /home/ritvik/Documents/MRT_ROS_WS/build/can_controller/build install --record /home/ritvik/Documents/MRT_ROS_WS/build/can_controller/install.log --single-version-externally-managed install_data
+[3.249s] running egg_info
+[3.285s] writing ../../build/can_controller/can_controller.egg-info/PKG-INFO
+[3.286s] writing dependency_links to ../../build/can_controller/can_controller.egg-info/dependency_links.txt
+[3.286s] writing entry points to ../../build/can_controller/can_controller.egg-info/entry_points.txt
+[3.286s] writing requirements to ../../build/can_controller/can_controller.egg-info/requires.txt
+[3.287s] writing top-level names to ../../build/can_controller/can_controller.egg-info/top_level.txt
+[3.365s] reading manifest file '../../build/can_controller/can_controller.egg-info/SOURCES.txt'
+[3.367s] writing manifest file '../../build/can_controller/can_controller.egg-info/SOURCES.txt'
+[3.367s] running build
+[3.367s] running build_py
+[3.368s] copying can_controller/can_controller.py -> /home/ritvik/Documents/MRT_ROS_WS/build/can_controller/build/lib/can_controller
+[3.369s] running install
+[3.382s] running install_lib
+[3.421s] copying /home/ritvik/Documents/MRT_ROS_WS/build/can_controller/build/lib/can_controller/can_controller.py -> /home/ritvik/Documents/MRT_ROS_WS/install/can_controller/lib/python3.12/site-packages/can_controller
+[3.422s] byte-compiling /home/ritvik/Documents/MRT_ROS_WS/install/can_controller/lib/python3.12/site-packages/can_controller/can_controller.py to can_controller.cpython-312.pyc
+[3.425s] running install_data
+[3.425s] running install_egg_info
+[3.467s] removing '/home/ritvik/Documents/MRT_ROS_WS/install/can_controller/lib/python3.12/site-packages/can_controller-0.0.0-py3.12.egg-info' (and everything under it)
+[3.468s] Copying ../../build/can_controller/can_controller.egg-info to /home/ritvik/Documents/MRT_ROS_WS/install/can_controller/lib/python3.12/site-packages/can_controller-0.0.0-py3.12.egg-info
+[3.471s] running install_scripts
+[3.749s] Installing can_controller script to /home/ritvik/Documents/MRT_ROS_WS/install/can_controller/lib/can_controller
+[3.750s] writing list of installed files to '/home/ritvik/Documents/MRT_ROS_WS/build/can_controller/install.log'
+[3.838s] Invoked command in '/home/ritvik/Documents/MRT_ROS_WS/src/can_controller' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ritvik/Documents/MRT_ROS_WS/build/can_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ritvik/Documents/MRT_ROS_WS/install/can_controller/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/can_controller build --build-base /home/ritvik/Documents/MRT_ROS_WS/build/can_controller/build install --record /home/ritvik/Documents/MRT_ROS_WS/build/can_controller/install.log --single-version-externally-managed install_data

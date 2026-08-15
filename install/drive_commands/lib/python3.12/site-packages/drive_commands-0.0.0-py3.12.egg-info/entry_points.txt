@@ -1,0 +1,2 @@
+[console_scripts]
+drive_command_test = drive_commands.drive_command_test:main

@@ -1,0 +1,32 @@
+[2.701s] Invoking command in '/home/ritvik/Documents/MRT_ROS_WS/arm_control': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ritvik/Documents/MRT_ROS_WS/build/arm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ritvik/Documents/MRT_ROS_WS/install/arm_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/arm_control build --build-base /home/ritvik/Documents/MRT_ROS_WS/build/arm_control/build install --record /home/ritvik/Documents/MRT_ROS_WS/build/arm_control/install.log --single-version-externally-managed install_data
+[3.254s] running egg_info
+[3.255s] creating ../build/arm_control/arm_control.egg-info
+[3.291s] writing ../build/arm_control/arm_control.egg-info/PKG-INFO
+[3.291s] writing dependency_links to ../build/arm_control/arm_control.egg-info/dependency_links.txt
+[3.292s] writing requirements to ../build/arm_control/arm_control.egg-info/requires.txt
+[3.292s] writing top-level names to ../build/arm_control/arm_control.egg-info/top_level.txt
+[3.292s] writing manifest file '../build/arm_control/arm_control.egg-info/SOURCES.txt'
+[3.367s] reading manifest file '../build/arm_control/arm_control.egg-info/SOURCES.txt'
+[3.369s] writing manifest file '../build/arm_control/arm_control.egg-info/SOURCES.txt'
+[3.369s] running build
+[3.369s] running build_py
+[3.370s] creating /home/ritvik/Documents/MRT_ROS_WS/build/arm_control/build
+[3.370s] creating /home/ritvik/Documents/MRT_ROS_WS/build/arm_control/build/lib
+[3.370s] creating /home/ritvik/Documents/MRT_ROS_WS/build/arm_control/build/lib/arm_control
+[3.370s] copying arm_control/__init__.py -> /home/ritvik/Documents/MRT_ROS_WS/build/arm_control/build/lib/arm_control
+[3.370s] running install
+[3.385s] running install_lib
+[3.423s] creating /home/ritvik/Documents/MRT_ROS_WS/install/arm_control/lib/python3.12/site-packages/arm_control
+[3.423s] copying /home/ritvik/Documents/MRT_ROS_WS/build/arm_control/build/lib/arm_control/__init__.py -> /home/ritvik/Documents/MRT_ROS_WS/install/arm_control/lib/python3.12/site-packages/arm_control
+[3.424s] byte-compiling /home/ritvik/Documents/MRT_ROS_WS/install/arm_control/lib/python3.12/site-packages/arm_control/__init__.py to __init__.cpython-312.pyc
+[3.424s] running install_data
+[3.425s] creating /home/ritvik/Documents/MRT_ROS_WS/install/arm_control/share/ament_index
+[3.425s] creating /home/ritvik/Documents/MRT_ROS_WS/install/arm_control/share/ament_index/resource_index
+[3.425s] creating /home/ritvik/Documents/MRT_ROS_WS/install/arm_control/share/ament_index/resource_index/packages
+[3.426s] copying resource/arm_control -> /home/ritvik/Documents/MRT_ROS_WS/install/arm_control/share/ament_index/resource_index/packages
+[3.426s] copying package.xml -> /home/ritvik/Documents/MRT_ROS_WS/install/arm_control/share/arm_control
+[3.426s] running install_egg_info
+[3.466s] Copying ../build/arm_control/arm_control.egg-info to /home/ritvik/Documents/MRT_ROS_WS/install/arm_control/lib/python3.12/site-packages/arm_control-0.0.0-py3.12.egg-info
+[3.467s] running install_scripts
+[3.735s] writing list of installed files to '/home/ritvik/Documents/MRT_ROS_WS/build/arm_control/install.log'
+[3.789s] Invoked command in '/home/ritvik/Documents/MRT_ROS_WS/arm_control' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ritvik/Documents/MRT_ROS_WS/build/arm_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ritvik/Documents/MRT_ROS_WS/install/arm_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/arm_control build --build-base /home/ritvik/Documents/MRT_ROS_WS/build/arm_control/build install --record /home/ritvik/Documents/MRT_ROS_WS/build/arm_control/install.log --single-version-externally-managed install_data

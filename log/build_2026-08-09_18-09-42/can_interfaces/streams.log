@@ -1,0 +1,257 @@
+[0.538s] Invoking command in '/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces -- -j16 -l16
+[0.607s] -- Found ament_cmake: 2.5.6 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[0.853s] -- Found rosidl_default_generators: 1.6.0 (/opt/ros/jazzy/share/rosidl_default_generators/cmake)
+[0.857s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[0.939s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.009s] -- Found rosidl_adapter: 4.6.7 (/opt/ros/jazzy/share/rosidl_adapter/cmake)
+[1.650s] -- Found ament_cmake_ros: 0.12.0 (/opt/ros/jazzy/share/ament_cmake_ros/cmake)
+[1.867s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[2.150s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.152s] -- Found python_cmake_module: 0.11.1 (/opt/ros/jazzy/share/python_cmake_module/cmake)
+[2.767s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter Development NumPy Development.Module Development.Embed 
+[2.841s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[2.844s] -- Found ament_lint_auto: 0.17.5 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[2.867s] -- Added test 'lint_cmake' to check CMake code style
+[2.870s] -- Added test 'xmllint' to check XML markup files
+[2.875s] -- Configuring done (2.3s)
+[2.952s] -- Generating done (0.1s)
+[2.973s] -- Build files have been written to: /home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces
+[3.053s] [  2%] [34m[1mGenerating Rust code for ROS interfaces[0m
+[3.054s] [  4%] [34m[1mGenerating type hashes for ROS interfaces[0m
+[3.075s] [  4%] Built target ament_cmake_python_copy_can_interfaces
+[3.497s] [  4%] Built target can_interfaces__rosidl_generator_type_description
+[3.522s] [  6%] [34m[1mGenerating C code for ROS interfaces[0m
+[3.530s] running egg_info
+[3.546s] [  8%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[3.570s] writing can_interfaces.egg-info/PKG-INFO
+[3.570s] writing dependency_links to can_interfaces.egg-info/dependency_links.txt
+[3.571s] writing top-level names to can_interfaces.egg-info/top_level.txt
+[3.573s] [  8%] Built target can_interfaces__rs
+[3.680s] reading manifest file 'can_interfaces.egg-info/SOURCES.txt'
+[3.681s] writing manifest file 'can_interfaces.egg-info/SOURCES.txt'
+[3.742s] [  8%] Built target ament_cmake_python_build_can_interfaces_egg
+[4.114s] [  8%] Built target can_interfaces__cpp
+[4.213s] [ 13%] [32mBuilding C object CMakeFiles/can_interfaces__rosidl_generator_c.dir/rosidl_generator_c/can_interfaces/msg/detail/drive_command__functions.c.o[0m
+[4.213s] [ 13%] [32mBuilding C object CMakeFiles/can_interfaces__rosidl_generator_c.dir/rosidl_generator_c/can_interfaces/msg/detail/drive_command__description.c.o[0m
+[4.213s] [ 15%] [32mBuilding C object CMakeFiles/can_interfaces__rosidl_generator_c.dir/rosidl_generator_c/can_interfaces/msg/detail/drive_command__type_support.c.o[0m
+[4.215s] [ 17%] [32mBuilding C object CMakeFiles/can_interfaces__rosidl_generator_c.dir/rosidl_generator_c/can_interfaces/msg/detail/can_queue__type_support.c.o[0m
+[4.215s] [ 22%] [32mBuilding C object CMakeFiles/can_interfaces__rosidl_generator_c.dir/rosidl_generator_c/can_interfaces/msg/detail/can_queue__functions.c.o[0m
+[4.215s] [ 22%] [32mBuilding C object CMakeFiles/can_interfaces__rosidl_generator_c.dir/rosidl_generator_c/can_interfaces/msg/detail/can_queue__description.c.o[0m
+[4.341s] [ 24%] [32m[1mLinking C shared library libcan_interfaces__rosidl_generator_c.so[0m
+[4.436s] [ 24%] Built target can_interfaces__rosidl_generator_c
+[4.460s] [ 31%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[4.461s] [ 31%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[4.461s] [ 31%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[4.461s] [ 33%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[4.462s] [ 37%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[4.462s] [ 37%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[5.000s] [ 40%] [32mBuilding CXX object CMakeFiles/can_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/can_interfaces/msg/can_queue__type_support.cpp.o[0m
+[5.004s] [ 42%] [32mBuilding CXX object CMakeFiles/can_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/can_interfaces/msg/drive_command__type_support.cpp.o[0m
+[5.016s] [ 44%] [32mBuilding CXX object CMakeFiles/can_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/can_interfaces/msg/can_queue__type_support.cpp.o[0m
+[5.017s] [ 46%] [32mBuilding CXX object CMakeFiles/can_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/can_interfaces/msg/drive_command__type_support.cpp.o[0m
+[5.058s] [ 48%] [32mBuilding CXX object CMakeFiles/can_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/can_interfaces/msg/detail/drive_command__type_support.cpp.o[0m
+[5.068s] [ 51%] [32mBuilding CXX object CMakeFiles/can_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/can_interfaces/msg/detail/can_queue__type_support.cpp.o[0m
+[5.077s] [ 53%] [32mBuilding C object CMakeFiles/can_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/can_interfaces/msg/detail/can_queue__type_support.c.o[0m
+[5.078s] [ 55%] [32mBuilding C object CMakeFiles/can_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/can_interfaces/msg/detail/drive_command__type_support.c.o[0m
+[5.125s] [ 57%] [32mBuilding CXX object CMakeFiles/can_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/can_interfaces/msg/detail/dds_fastrtps/can_queue__type_support.cpp.o[0m
+[5.129s] [ 60%] [32mBuilding CXX object CMakeFiles/can_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/can_interfaces/msg/detail/dds_fastrtps/drive_command__type_support.cpp.o[0m
+[5.143s] [ 62%] [32mBuilding CXX object CMakeFiles/can_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/can_interfaces/msg/detail/drive_command__type_support_c.cpp.o[0m
+[5.151s] [ 64%] [32mBuilding CXX object CMakeFiles/can_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/can_interfaces/msg/detail/can_queue__type_support_c.cpp.o[0m
+[5.170s] [ 66%] [32m[1mLinking C shared library libcan_interfaces__rosidl_typesupport_introspection_c.so[0m
+[5.171s] [ 68%] [32m[1mLinking CXX shared library libcan_interfaces__rosidl_typesupport_c.so[0m
+[5.265s] [ 68%] Built target can_interfaces__rosidl_typesupport_introspection_c
+[5.276s] [ 68%] Built target can_interfaces__rosidl_typesupport_c
+[5.699s] [ 71%] [32m[1mLinking CXX shared library libcan_interfaces__rosidl_typesupport_cpp.so[0m
+[5.795s] [ 71%] Built target can_interfaces__rosidl_typesupport_cpp
+[5.891s] [ 73%] [32m[1mLinking CXX shared library libcan_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[6.036s] [ 75%] [32m[1mLinking CXX shared library libcan_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[6.061s] [ 75%] Built target can_interfaces__rosidl_typesupport_introspection_cpp
+[6.149s] [ 75%] Built target can_interfaces__rosidl_typesupport_fastrtps_c
+[6.168s] [ 77%] [32m[1mLinking CXX shared library libcan_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[6.331s] [ 77%] Built target can_interfaces__rosidl_typesupport_fastrtps_cpp
+[6.378s] [ 77%] Built target can_interfaces
+[6.428s] [ 80%] [34m[1mGenerating Python code for ROS interfaces[0m
+[7.130s] [ 80%] Built target can_interfaces__py
+[7.191s] [ 84%] [32mBuilding C object CMakeFiles/can_interfaces__rosidl_generator_py.dir/rosidl_generator_py/can_interfaces/msg/_drive_command_s.c.o[0m
+[7.191s] [ 84%] [32mBuilding C object CMakeFiles/can_interfaces__rosidl_generator_py.dir/rosidl_generator_py/can_interfaces/msg/_can_queue_s.c.o[0m
+[7.503s] [ 86%] [32m[1mLinking C shared library libcan_interfaces__rosidl_generator_py.so[0m
+[7.588s] [ 86%] Built target can_interfaces__rosidl_generator_py
+[7.635s] [ 88%] [32mBuilding C object CMakeFiles/can_interfaces_s__rosidl_typesupport_introspection_c.dir/rosidl_generator_py/can_interfaces/_can_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[7.641s] [ 93%] [32mBuilding C object CMakeFiles/can_interfaces_s__rosidl_typesupport_c.dir/rosidl_generator_py/can_interfaces/_can_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[7.641s] [ 93%] [32mBuilding C object CMakeFiles/can_interfaces_s__rosidl_typesupport_fastrtps_c.dir/rosidl_generator_py/can_interfaces/_can_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[7.806s] [ 95%] [32m[1mLinking C shared module rosidl_generator_py/can_interfaces/can_interfaces_s__rosidl_typesupport_c.so[0m
+[7.831s] [ 97%] [32m[1mLinking C shared module rosidl_generator_py/can_interfaces/can_interfaces_s__rosidl_typesupport_introspection_c.so[0m
+[7.843s] [100%] [32m[1mLinking C shared module rosidl_generator_py/can_interfaces/can_interfaces_s__rosidl_typesupport_fastrtps_c.so[0m
+[7.860s] [100%] Built target can_interfaces_s__rosidl_typesupport_c
+[7.892s] [100%] Built target can_interfaces_s__rosidl_typesupport_introspection_c
+[7.900s] [100%] Built target can_interfaces_s__rosidl_typesupport_fastrtps_c
+[7.930s] Invoked command in '/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces -- -j16 -l16
+[7.953s] Invoking command in '/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces
+[7.974s] -- Install configuration: ""
+[7.974s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/ament_index/resource_index/rosidl_interfaces/can_interfaces
+[7.975s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/msg/DriveCommand.json
+[7.975s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/msg/CANQueue.json
+[7.975s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces
+[7.976s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg
+[7.976s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/can_queue.h
+[7.976s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail
+[7.976s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__struct.h
+[7.976s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__functions.c
+[7.977s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__functions.c
+[7.977s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__type_support.c
+[7.977s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__struct.h
+[7.978s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__functions.h
+[7.978s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__description.c
+[7.978s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__description.c
+[7.978s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__type_support.h
+[7.979s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__functions.h
+[7.979s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__type_support.c
+[7.979s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__type_support.h
+[7.979s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/rosidl_generator_c__visibility_control.h
+[7.979s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/drive_command.h
+[7.980s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/environment/library_path.sh
+[7.980s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/environment/library_path.dsv
+[7.980s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_generator_c.so
+[7.981s] -- Set non-toolchain portion of runtime path of "/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_generator_c.so" to ""
+[7.981s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces
+[7.982s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg
+[7.982s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail
+[7.982s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__rosidl_typesupport_fastrtps_c.h
+[7.982s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__rosidl_typesupport_fastrtps_c.h
+[7.982s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[7.982s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_fastrtps_c.so
+[7.983s] -- Set non-toolchain portion of runtime path of "/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[7.983s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces
+[7.983s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg
+[7.983s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail
+[7.984s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__type_support.c
+[7.984s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__rosidl_typesupport_introspection_c.h
+[7.984s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__rosidl_typesupport_introspection_c.h
+[7.984s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__type_support.c
+[7.984s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[7.984s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_introspection_c.so
+[7.985s] -- Set non-toolchain portion of runtime path of "/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[7.986s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_c.so
+[7.986s] -- Set non-toolchain portion of runtime path of "/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_c.so" to ""
+[7.986s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces
+[7.986s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg
+[7.986s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail
+[7.987s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__type_support.hpp
+[7.987s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__builder.hpp
+[7.987s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__traits.hpp
+[7.987s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__type_support.hpp
+[7.987s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__traits.hpp
+[7.988s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__struct.hpp
+[7.988s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__builder.hpp
+[7.988s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__struct.hpp
+[7.988s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[7.989s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/drive_command.hpp
+[7.989s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/can_queue.hpp
+[7.989s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces
+[7.989s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg
+[7.989s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail
+[7.990s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/dds_fastrtps
+[7.990s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__rosidl_typesupport_fastrtps_cpp.hpp
+[7.990s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__rosidl_typesupport_fastrtps_cpp.hpp
+[7.990s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[7.991s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[7.991s] -- Set non-toolchain portion of runtime path of "/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[7.991s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces
+[7.992s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg
+[7.992s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail
+[7.992s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__rosidl_typesupport_introspection_cpp.hpp
+[7.992s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/drive_command__type_support.cpp
+[7.992s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__rosidl_typesupport_introspection_cpp.hpp
+[7.993s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/include/can_interfaces/can_interfaces/msg/detail/can_queue__type_support.cpp
+[7.994s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_introspection_cpp.so
+[7.995s] -- Set non-toolchain portion of runtime path of "/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[7.995s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_cpp.so
+[7.996s] -- Set non-toolchain portion of runtime path of "/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_typesupport_cpp.so" to ""
+[7.997s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/environment/pythonpath.sh
+[7.997s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/environment/pythonpath.dsv
+[7.997s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces-0.0.0-py3.12.egg-info
+[7.997s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces-0.0.0-py3.12.egg-info/dependency_links.txt
+[7.997s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces-0.0.0-py3.12.egg-info/top_level.txt
+[7.997s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces-0.0.0-py3.12.egg-info/PKG-INFO
+[7.997s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces-0.0.0-py3.12.egg-info/SOURCES.txt
+[7.998s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces
+[7.998s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/can_interfaces_s__rosidl_typesupport_introspection_c.so
+[7.998s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/msg
+[7.998s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/msg/_can_queue_s.c
+[7.998s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/msg/__init__.py
+[7.999s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/msg/_drive_command_s.c
+[7.999s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/msg/_can_queue.py
+[7.999s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/msg/_drive_command.py
+[7.999s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/_can_interfaces_s.ep.rosidl_typesupport_c.c
+[8.000s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/can_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[8.000s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/__init__.py
+[8.000s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/_can_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[8.000s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/_can_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[8.001s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/can_interfaces_s__rosidl_typesupport_c.so
+[8.082s] Listing '/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces'...
+[8.082s] Compiling '/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/__init__.py'...
+[8.082s] Listing '/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/msg'...
+[8.082s] Compiling '/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/msg/__init__.py'...
+[8.082s] Compiling '/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/msg/_can_queue.py'...
+[8.083s] Compiling '/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/msg/_drive_command.py'...
+[8.096s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/can_interfaces_s__rosidl_typesupport_fastrtps_c.so
+[8.097s] -- Set non-toolchain portion of runtime path of "/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/can_interfaces_s__rosidl_typesupport_fastrtps_c.so" to ""
+[8.098s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/can_interfaces_s__rosidl_typesupport_introspection_c.so
+[8.099s] -- Set non-toolchain portion of runtime path of "/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/can_interfaces_s__rosidl_typesupport_introspection_c.so" to ""
+[8.099s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/can_interfaces_s__rosidl_typesupport_c.so
+[8.100s] -- Set non-toolchain portion of runtime path of "/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/python3.12/site-packages/can_interfaces/can_interfaces_s__rosidl_typesupport_c.so" to ""
+[8.102s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_generator_py.so
+[8.103s] -- Set non-toolchain portion of runtime path of "/home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/lib/libcan_interfaces__rosidl_generator_py.so" to ""
+[8.103s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/ament_index/resource_index/rust_packages/can_interfaces
+[8.103s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/rust
+[8.103s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/rust/Cargo.toml
+[8.104s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/rust/build.rs
+[8.104s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/rust/src
+[8.104s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/rust/src/lib.rs
+[8.104s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/rust/src/msg
+[8.105s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/rust/src/msg/rmw.rs
+[8.105s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/rust/src/msg.rs
+[8.105s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/msg/DriveCommand.idl
+[8.106s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/msg/CANQueue.idl
+[8.106s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/msg/DriveCommand.msg
+[8.106s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/msg/CANQueue.msg
+[8.106s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/ament_index/resource_index/package_run_dependencies/can_interfaces
+[8.107s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/ament_index/resource_index/parent_prefix_path/can_interfaces
+[8.107s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/environment/ament_prefix_path.sh
+[8.107s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/environment/ament_prefix_path.dsv
+[8.107s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/environment/path.sh
+[8.107s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/environment/path.dsv
+[8.108s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/local_setup.bash
+[8.108s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/local_setup.sh
+[8.108s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/local_setup.zsh
+[8.108s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/local_setup.dsv
+[8.108s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/package.dsv
+[8.108s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/ament_index/resource_index/packages/can_interfaces
+[8.108s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/export_can_interfaces__rosidl_generator_cExport.cmake
+[8.109s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/export_can_interfaces__rosidl_generator_cExport-noconfig.cmake
+[8.109s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/export_can_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[8.109s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/export_can_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[8.109s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/can_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[8.109s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/can_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[8.109s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/can_interfaces__rosidl_typesupport_cExport.cmake
+[8.109s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/can_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[8.109s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/export_can_interfaces__rosidl_generator_cppExport.cmake
+[8.110s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/export_can_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[8.110s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/export_can_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[8.110s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/can_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[8.110s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/can_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[8.110s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/can_interfaces__rosidl_typesupport_cppExport.cmake
+[8.110s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/can_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[8.110s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/export_can_interfaces__rosidl_generator_pyExport.cmake
+[8.111s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/export_can_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[8.111s] -- Installing: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/rosidl_cmake-extras.cmake
+[8.111s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[8.111s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[8.111s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[8.111s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[8.112s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[8.112s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[8.112s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/can_interfacesConfig.cmake
+[8.112s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/cmake/can_interfacesConfig-version.cmake
+[8.112s] -- Up-to-date: /home/ritvik/Documents/MRT_ROS_WS/install/can_interfaces/share/can_interfaces/package.xml
+[8.118s] Invoked command in '/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces

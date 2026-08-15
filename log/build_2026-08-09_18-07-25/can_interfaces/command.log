@@ -1,0 +1,2 @@
+Invoking command in '/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces -- -j16 -l16
+Invoked command in '/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces -- -j16 -l16

@@ -1,0 +1,23 @@
+{
+  "package_name": "can_interfaces",
+  "output_dir": "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_typesupport_fastrtps_cpp/can_interfaces",
+  "template_dir": "/opt/ros/jazzy/share/rosidl_typesupport_fastrtps_cpp/resource",
+  "idl_tuples": [
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces:msg/DriveCommand.idl",
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces:msg/CANQueue.idl",
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces:msg/MobilityData.idl"
+  ],
+  "target_dependencies": [
+    "/opt/ros/jazzy/lib/rosidl_typesupport_fastrtps_cpp/rosidl_typesupport_fastrtps_cpp",
+    "/opt/ros/jazzy/lib/python3.12/site-packages/rosidl_typesupport_fastrtps_cpp/__init__.py",
+    "/opt/ros/jazzy/share/rosidl_typesupport_fastrtps_cpp/resource/idl__rosidl_typesupport_fastrtps_cpp.hpp.em",
+    "/opt/ros/jazzy/share/rosidl_typesupport_fastrtps_cpp/resource/idl__type_support.cpp.em",
+    "/opt/ros/jazzy/share/rosidl_typesupport_fastrtps_cpp/resource/msg__rosidl_typesupport_fastrtps_cpp.hpp.em",
+    "/opt/ros/jazzy/share/rosidl_typesupport_fastrtps_cpp/resource/msg__type_support.cpp.em",
+    "/opt/ros/jazzy/share/rosidl_typesupport_fastrtps_cpp/resource/srv__rosidl_typesupport_fastrtps_cpp.hpp.em",
+    "/opt/ros/jazzy/share/rosidl_typesupport_fastrtps_cpp/resource/srv__type_support.cpp.em",
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces/msg/DriveCommand.idl",
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces/msg/CANQueue.idl",
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces/msg/MobilityData.idl"
+  ]
+}

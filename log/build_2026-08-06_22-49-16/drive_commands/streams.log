@@ -1,0 +1,37 @@
+[2.167s] Invoking command in '/home/ritvik/Documents/MRT_ROS_WS/src/drive_commands': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drive_commands build --build-base /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/build install --record /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/install.log --single-version-externally-managed install_data
+[2.681s] running egg_info
+[2.682s] creating ../../build/drive_commands/drive_commands.egg-info
+[2.717s] writing ../../build/drive_commands/drive_commands.egg-info/PKG-INFO
+[2.717s] writing dependency_links to ../../build/drive_commands/drive_commands.egg-info/dependency_links.txt
+[2.718s] writing entry points to ../../build/drive_commands/drive_commands.egg-info/entry_points.txt
+[2.718s] writing requirements to ../../build/drive_commands/drive_commands.egg-info/requires.txt
+[2.719s] writing top-level names to ../../build/drive_commands/drive_commands.egg-info/top_level.txt
+[2.719s] writing manifest file '../../build/drive_commands/drive_commands.egg-info/SOURCES.txt'
+[2.795s] reading manifest file '../../build/drive_commands/drive_commands.egg-info/SOURCES.txt'
+[2.797s] writing manifest file '../../build/drive_commands/drive_commands.egg-info/SOURCES.txt'
+[2.797s] running build
+[2.797s] running build_py
+[2.797s] creating /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/build
+[2.798s] creating /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/build/lib
+[2.798s] creating /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/build/lib/drive_commands
+[2.798s] copying drive_commands/drive_command_test.py -> /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/build/lib/drive_commands
+[2.798s] copying drive_commands/__init__.py -> /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/build/lib/drive_commands
+[2.799s] running install
+[2.811s] running install_lib
+[2.847s] creating /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages/drive_commands
+[2.848s] copying /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/build/lib/drive_commands/drive_command_test.py -> /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages/drive_commands
+[2.848s] copying /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/build/lib/drive_commands/__init__.py -> /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages/drive_commands
+[2.849s] byte-compiling /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages/drive_commands/drive_command_test.py to drive_command_test.cpython-312.pyc
+[2.850s] byte-compiling /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages/drive_commands/__init__.py to __init__.cpython-312.pyc
+[2.850s] running install_data
+[2.851s] creating /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/share/ament_index
+[2.851s] creating /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/share/ament_index/resource_index
+[2.851s] creating /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/share/ament_index/resource_index/packages
+[2.852s] copying resource/drive_commands -> /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/share/ament_index/resource_index/packages
+[2.852s] copying package.xml -> /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/share/drive_commands
+[2.852s] running install_egg_info
+[2.892s] Copying ../../build/drive_commands/drive_commands.egg-info to /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages/drive_commands-0.0.0-py3.12.egg-info
+[2.894s] running install_scripts
+[3.154s] Installing drive_command_test script to /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/drive_commands
+[3.155s] writing list of installed files to '/home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/install.log'
+[3.213s] Invoked command in '/home/ritvik/Documents/MRT_ROS_WS/src/drive_commands' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drive_commands build --build-base /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/build install --record /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/install.log --single-version-externally-managed install_data

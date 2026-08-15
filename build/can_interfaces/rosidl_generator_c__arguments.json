@@ -1,0 +1,44 @@
+{
+  "package_name": "can_interfaces",
+  "output_dir": "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_generator_c/can_interfaces",
+  "template_dir": "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource",
+  "idl_tuples": [
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces:msg/DriveCommand.idl",
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces:msg/CANQueue.idl",
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces:msg/MobilityData.idl"
+  ],
+  "ros_interface_files": [
+    "/home/ritvik/Documents/MRT_ROS_WS/src/can_interfaces/msg/DriveCommand.msg",
+    "/home/ritvik/Documents/MRT_ROS_WS/src/can_interfaces/msg/CANQueue.msg",
+    "/home/ritvik/Documents/MRT_ROS_WS/src/can_interfaces/msg/MobilityData.msg"
+  ],
+  "target_dependencies": [
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../../../lib/rosidl_generator_c/rosidl_generator_c",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../../../lib/python3.12/site-packages/rosidl_generator_c/__init__.py",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/action__type_support.h.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/action__type_support.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/empty__description.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/full__description.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/idl.h.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/idl__description.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/idl__functions.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/idl__functions.h.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/idl__struct.h.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/idl__type_support.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/idl__type_support.h.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/msg__functions.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/msg__functions.h.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/msg__struct.h.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/msg__type_support.h.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/srv__type_support.c.em",
+    "/opt/ros/jazzy/share/rosidl_generator_c/cmake/../resource/srv__type_support.h.em",
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces/msg/DriveCommand.idl",
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces/msg/CANQueue.idl",
+    "/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_adapter/can_interfaces/msg/MobilityData.idl"
+  ],
+  "type_description_tuples": [
+    "msg/DriveCommand.idl:/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_generator_type_description/can_interfaces/msg/DriveCommand.json",
+    "msg/CANQueue.idl:/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_generator_type_description/can_interfaces/msg/CANQueue.json",
+    "msg/MobilityData.idl:/home/ritvik/Documents/MRT_ROS_WS/build/can_interfaces/rosidl_generator_type_description/can_interfaces/msg/MobilityData.json"
+  ]
+}

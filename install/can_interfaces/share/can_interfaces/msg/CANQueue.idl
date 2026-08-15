@@ -1,0 +1,14 @@
+// generated from rosidl_adapter/resource/msg.idl.em
+// with input from can_interfaces/msg/CANQueue.msg
+// generated code does not contain a copyright notice
+
+
+module can_interfaces {
+  module msg {
+    struct CANQueue {
+      int32 arb_id;
+
+      sequence<int32> data;
+    };
+  };
+};

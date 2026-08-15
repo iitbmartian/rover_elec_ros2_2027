@@ -1,0 +1,21 @@
+[0.969s] Invoking command in '/home/ritvik/Documents/MRT_ROS_WS/src/drive_commands': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drive_commands build --build-base /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/build install --record /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/install.log --single-version-externally-managed install_data
+[1.128s] running egg_info
+[1.139s] writing ../../build/drive_commands/drive_commands.egg-info/PKG-INFO
+[1.140s] writing dependency_links to ../../build/drive_commands/drive_commands.egg-info/dependency_links.txt
+[1.140s] writing entry points to ../../build/drive_commands/drive_commands.egg-info/entry_points.txt
+[1.140s] writing requirements to ../../build/drive_commands/drive_commands.egg-info/requires.txt
+[1.140s] writing top-level names to ../../build/drive_commands/drive_commands.egg-info/top_level.txt
+[1.161s] reading manifest file '../../build/drive_commands/drive_commands.egg-info/SOURCES.txt'
+[1.162s] writing manifest file '../../build/drive_commands/drive_commands.egg-info/SOURCES.txt'
+[1.162s] running build
+[1.162s] running build_py
+[1.162s] running install
+[1.166s] running install_lib
+[1.179s] running install_data
+[1.179s] running install_egg_info
+[1.193s] removing '/home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages/drive_commands-0.0.0-py3.12.egg-info' (and everything under it)
+[1.193s] Copying ../../build/drive_commands/drive_commands.egg-info to /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages/drive_commands-0.0.0-py3.12.egg-info
+[1.194s] running install_scripts
+[1.274s] Installing drive_command_test script to /home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/drive_commands
+[1.274s] writing list of installed files to '/home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/install.log'
+[1.318s] Invoked command in '/home/ritvik/Documents/MRT_ROS_WS/src/drive_commands' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/ritvik/Documents/MRT_ROS_WS/install/drive_commands/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/drive_commands build --build-base /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/build install --record /home/ritvik/Documents/MRT_ROS_WS/build/drive_commands/install.log --single-version-externally-managed install_data
