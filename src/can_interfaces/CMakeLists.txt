@@ -15,8 +15,16 @@ find_package(rosidl_default_generators REQUIRED)
 
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/DriveCommand.msg"
-  "msg/CANQueue.msg"
-  "msg/MobilityData.msg"
+  "msg/MobilityDataFL.msg"
+  "msg/MobilityDataFR.msg"
+  "msg/MobilityDataBL.msg"
+  "msg/MobilityDataBR.msg"
+  "msg/CanMessage.msg"
+  "msg/BLDCPositionCommand.msg"
+  "msg/WristPositionCommand.msg"
+  "msg/WristEncoders.msg"
+  "msg/BasePositionCommand.msg"
+  "msg/BasePosition.msg"
 )
 
 if(BUILD_TESTING)

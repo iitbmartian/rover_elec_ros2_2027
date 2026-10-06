@@ -1,2 +1,0 @@
-[console_scripts]
-can_controller = can_controller.can_controller:main

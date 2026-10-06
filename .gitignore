@@ -1,0 +1,39 @@
+# colcon / ROS 2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+*.egg
+.pytest_cache/
+.mypy_cache/
+venv/
+.venv/
+
+# CMake
+CMakeCache.txt
+CMakeFiles/
+.cmake/
+
+# Archives / scratch
+*.zip
+*.bag
+*.db3
+
+# IDEs / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+
+# Claude files
+.claude/
+CLAUDE.md
+CLAUDE.local.md
+prompt.txt
+
+# Markdown files (anywhere)
+*.md

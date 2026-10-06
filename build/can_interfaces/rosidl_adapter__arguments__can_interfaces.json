@@ -1,8 +1,0 @@
-{
-  "package_name": "can_interfaces",
-  "non_idl_tuples": [
-    "/home/ritvik/Documents/MRT_ROS_WS/src/can_interfaces:msg/DriveCommand.msg",
-    "/home/ritvik/Documents/MRT_ROS_WS/src/can_interfaces:msg/CANQueue.msg",
-    "/home/ritvik/Documents/MRT_ROS_WS/src/can_interfaces:msg/MobilityData.msg"
-  ]
-}

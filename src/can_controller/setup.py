@@ -25,6 +25,10 @@ setup(
     entry_points={
         'console_scripts': [
             'can_controller = can_controller.can_controller:main',
+            'mobility_can = can_controller.mobility_can:main',
+            'odrive_can = can_controller.odrive_can:main',
+            'wrist_can = can_controller.wrist_can:main',
+            'base_can = can_controller.base_can:main'
         ],
     },
 )

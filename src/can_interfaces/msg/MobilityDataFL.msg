@@ -1,0 +1,4 @@
+int32 explicit_mag_fl
+int32 explicit_quad_fl
+int32 explicit_imu_fl
+int32 drive_quad_fl
