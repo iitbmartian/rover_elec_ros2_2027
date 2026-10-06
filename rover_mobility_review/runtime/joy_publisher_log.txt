@@ -1,0 +1,15 @@
+1790183580.161327 [10]    python3: config: //CycloneDDS/Domain/General: 'NetworkInterfaceAddress': deprecated element (file:///home/aaravb/.config/cyclonedds/cyclone.xml line 4)
+[INFO] [1790183580.339817996] [fake_joy_publisher]: publishing /joy stage: neutral
+[INFO] [1790183581.344438923] [fake_joy_publisher]: publishing /joy stage: full_forward
+[INFO] [1790183582.377836958] [fake_joy_publisher]: publishing /joy stage: full_reverse
+[INFO] [1790183583.412343067] [fake_joy_publisher]: publishing /joy stage: full_left_rotate
+[INFO] [1790183584.439635447] [fake_joy_publisher]: publishing /joy stage: full_right_rotate
+[INFO] [1790183585.475313764] [fake_joy_publisher]: publishing /joy stage: crab_toggle_on
+[INFO] [1790183585.680987620] [fake_joy_publisher]: publishing /joy stage: crab_toggle_off
+[INFO] [1790183585.885580258] [fake_joy_publisher]: publishing /joy stage: simultaneous_extreme
+[INFO] [1790183586.907784173] [fake_joy_publisher]: publishing /joy stage: rapid_reversal_1
+[INFO] [1790183587.031410048] [fake_joy_publisher]: publishing /joy stage: rapid_reversal_2
+[INFO] [1790183587.156220417] [fake_joy_publisher]: publishing /joy stage: rapid_reversal_3
+[INFO] [1790183587.279410737] [fake_joy_publisher]: publishing /joy stage: rapid_reversal_4
+[INFO] [1790183587.402264906] [fake_joy_publisher]: publishing /joy stage: short_malformed_axes
+[INFO] [1790183588.434051500] [fake_joy_publisher]: publishing /joy stage: back_to_neutral

@@ -1,0 +1,110 @@
+mobility_node:
+  ros__parameters:
+    joy_topic: "/joy"
+    dt: 0.01
+
+    # per-wheel CAN topics - each wheel has its own message type, so each
+    # needs its own topic name (see mobility_node.py module docstring)
+    can_topic_fr: "/can/mobility_data_fr"
+    can_topic_bl: "/can/mobility_data_bl"
+    can_topic_fl: "/can/mobility_data_fl"
+    can_topic_br: "/can/mobility_data_br"
+
+    # VroomVroom geometry / scaling
+    half_width: 0.35
+    half_length: 0.45
+    speed_scalar: 250.0
+    r_scalar: 1.0
+    deadzone: 0.0
+
+    # steering (explicit/EKF) - starting gains only. Once tune_pid.py is
+    # running (ros2 launch rover_mobility tune_pid.launch.py), /pid_gains
+    # updates override these live - see mobility_node.py's "PID
+    # calibration" docstring section.
+    steer_t_motor: 0.15
+    steer_k_motor: 0.8
+    steer_q_diag: [0.001, 0.01]
+    steer_r_diag: [0.05, 0.02, 0.01]
+    steer_pid_kp: 1.0
+    steer_pid_ki: 0.0
+    steer_pid_kd: 0.0
+
+    # drive - starting gains only, same note as above.
+    drive_max_ticks_per_dt: 50.0
+    drive_tick_counter_bits: 16
+    drive_pid_kp: 1.0
+    drive_pid_ki: 0.0
+    drive_pid_kd: 0.0
+
+    # per-wheel calibration - placeholders, NOT drive_controller.py's real
+    # 16.17/93.95/355.80/260.50 values (see mobility_node.py comment on the
+    # FR/BR/FL/BL ordering conflict before reusing those numbers). Prefer
+    # the zero_wheel_index/zero_all_wheels runtime calibration command
+    # below over hand-editing these.
+    mag_offsets: [0.0, 0.0, 0.0, 0.0]
+    quad_offsets: [0.0, 0.0, 0.0, 0.0]
+    steer_input_direction_flip: [false, false, false, false]
+    vroom_input_direction_flip: [false, false, false, false]
+    steer_output_direction_flip: [false, false, false, false]
+    vroom_output_direction_flip: [false, false, false, false]
+
+    # joystick smoothing
+    joy_x_acc: 0.5
+    joy_y_acc: 2.0
+
+    # drive power ramps down while a wheel is still turning toward its
+    # target angle - see mobility_node.py comment
+    drive_alignment_max_error_deg: 30.0
+
+    # zero-reference calibration trigger - see mobility_node.py module
+    # docstring. Leave at these neutral values; set at runtime via
+    # `ros2 param set /mobility_node zero_wheel_index <0-3>` or
+    # `ros2 param set /mobility_node zero_all_wheels true`.
+    zero_wheel_index: -1
+    zero_all_wheels: false
+
+# PID calibration tuner - NOT launched by default with mobility.launch.py.
+# Run it only when you need to (re)calibrate, e.g. after moving to a new
+# surface: `ros2 launch rover_mobility tune_pid.launch.py`. It reads this
+# node's real, already-calibrated /telemetry + /pid_commands (all 4
+# wheels) and pushes /pid_gains updates that mobility_node applies live.
+tune_pid:
+  ros__parameters:
+    # MUST match mobility_node's `dt` above - tune_pid's RLS/pole-placement
+    # math assumes each telemetry sample is Ts seconds after the last one;
+    # since mobility_node now publishes /telemetry itself every tick
+    # (dt=0.01) rather than through the old 50ms telemetry_bridge.py, Ts
+    # has to match dt, not the tuner's own historical 0.05 default.
+    Ts: 0.01
+    n_wheels: 4
+    wheel_names: ["FR", "BR", "FL", "BL"]   # must match mobility_node.py's WHEEL_ORDER exactly
+    # mag_offsets/pos_flip stay neutral (0.0/false): mobility_node already
+    # applies its OWN mag_offsets/quad_offsets/steer_input_flip before
+    # publishing /telemetry, so the angle the tuner sees is already fully
+    # calibrated. Re-applying an offset/flip here would double-correct it.
+    mag_offsets: [0.0, 0.0, 0.0, 0.0]
+    pos_flip: [false, false, false, false]
+    # vel_flip IS independently meaningful (it corrects raw encoder-count
+    # sign convention going into the RLS velocity model, orthogonal to any
+    # of mobility_node's own flip params, which affect commanded/output
+    # direction, not measured sign) - set true per-wheel if that wheel's
+    # measured_ticks_per_dt runs backwards relative to its commanded PWM.
+    vel_flip: [false, false, false, false]
+    lambda_pos: 0.97
+    lambda_vel: 0.97
+    T_settle_pos: 0.5
+    T_settle_vel: 0.3
+    Kp_thresh: 3.0
+    Ki_thresh: 1.0
+    Kd_thresh: 1.0
+    min_rls_warmup: 20
+    # starting gains - should mirror mobility_node's own steer_pid_*/
+    # drive_pid_* defaults above so the first /pid_gains update (once
+    # thresholds/warmup are satisfied) isn't a jarring jump from wherever
+    # the tuner's internal state happened to start.
+    init_pos_kp: 1.0
+    init_pos_ki: 0.0
+    init_pos_kd: 0.0
+    init_vel_kp: 1.0
+    init_vel_ki: 0.0
+    init_vel_kd: 0.0

@@ -1,0 +1,6 @@
+1790183577.302827 [10]    python3: config: //CycloneDDS/Domain/General: 'NetworkInterfaceAddress': deprecated element (file:///home/aaravb/.config/cyclonedds/cyclone.xml line 4)
+[INFO] [1790183577.413927440] [fake_can_publisher]: publishing CAN stage: normal_small_deltas
+[INFO] [1790183577.898245525] [fake_can_publisher]: publishing CAN stage: rollover_forward
+[INFO] [1790183578.261777951] [fake_can_publisher]: publishing CAN stage: rollover_backward
+[INFO] [1790183578.625380830] [fake_can_publisher]: publishing CAN stage: stalled_repeated
+[INFO] [1790183579.231089272] [fake_can_publisher]: publishing CAN stage: extreme_glitch

@@ -1,0 +1,214 @@
+// copy the CAN_Heartbeat fn
+// and in the while loop jst the heartbeat and the start_node parts
+// use this in the main.c for the gripper
+
+void CAN_Heartbeat(void){
+    if (beat_pls){
+		tx_heartbeat.frame.idType = dSTANDARD_CAN_MSG_ID_2_0B;
+		tx_heartbeat.frame.id = heartbeated_msg;
+		tx_heartbeat.frame.dlc = 1;
+		tx_heartbeat.frame.data0 = heartbeater;
+		beat_pls = false;
+		CANSPI_Transmit(&tx_heartbeat);
+    }
+}
+
+
+uint16_t cast_to_arbid(uint16_t id){
+ return (id & 0b11111111111);
+}
+
+void delay_us (uint16_t us){
+	__HAL_TIM_SET_COUNTER(&htim1,0);  // set the counter value a 0
+	while (__HAL_TIM_GET_COUNTER(&htim1) < us);  // wait for the counter to reach the us input in the parameter
+}
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_DMA_Init();
+  MX_ADC1_Init();
+  MX_I2C1_Init();
+  MX_SPI2_Init();
+  MX_TIM2_Init();
+  MX_TIM3_Init();
+  MX_TIM5_Init();
+  MX_TIM1_Init();
+  /* USER CODE BEGIN 2 */
+  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,0);
+  HAL_Delay(100);
+  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,1);
+  HAL_Delay(100);
+
+  HAL_Delay(1000);
+  CAN_checker = CANSPI_Initialize();
+  HAL_Delay(1000);
+
+  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,0);
+  HAL_Delay(100);
+  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,1);
+  HAL_Delay(100);
+
+  HAL_ADC_Start_DMA(&hadc1, (uint32_t*)adc_buf, 2);
+  __HAL_DMA_DISABLE_IT(hadc1.DMA_Handle, DMA_IT_TC | DMA_IT_HT | DMA_IT_TE);
+
+  uint8_t opr_mode = 0x0C;
+  HAL_I2C_Mem_Write(&hi2c1, BNO_AD, 0x3D, I2C_MEMADD_SIZE_8BIT, &opr_mode, 1, 100);
+  HAL_Delay(20);
+
+  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,0);
+  HAL_Delay(100);
+  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,1);
+  HAL_Delay(100);
+
+  HAL_TIM_Base_Start(&htim1);
+
+  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_3);
+  HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_4);
+
+  HAL_TIM_Encoder_Start(&htim2, TIM_CHANNEL_ALL);
+  HAL_TIM_Encoder_Start(&htim3, TIM_CHANNEL_ALL);
+
+  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,1);
+  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,1);
+
+  __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_3, 150);
+  __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_4, 150);
+
+  HAL_Delay(2000);
+
+  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,0);
+  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,0);
+  __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_3, 0);
+  __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_4, 0);
+
+  HAL_Delay(1000);
+
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+    while (1)
+    {
+    /* USER CODE END WHILE */
+
+    /* USER CODE BEGIN 3 */
+
+      if (i2c_state == I2C_IDLE || i2c_state == I2C_DONE) {
+    	  I2C1_Sequence_Start();
+      }
+
+      if (CAN_failed_counter>=10000){
+    	  __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_3, 0);
+    	  __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_4, 0);
+    	  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,0);
+    	  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,0);
+    	  start_node = false;
+    	  start_node = false;
+      }
+
+      if (!start_node){
+    	  HAL_Delay(500);
+    	  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,0);
+    	  HAL_Delay(100);
+    	  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,1);
+    	  HAL_Delay(100);
+    	  while(!CANSPI_Receive(&rx)){}
+    	  if (rx.frame.id == start_node_msg){
+    		  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,0);
+    		  HAL_Delay(100);
+    		  HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,1);
+    		  HAL_Delay(100);
+    		  start_node = true;
+    		  start_node_init = true;
+    		  delay_us(50);
+    	  }
+    	  else if (rx.frame.id == sensor_check_msg){
+    		  CAN_Send_SensorCheck();
+    	  }
+    	  else if (start_node_init){
+    		  start_node = true;
+    	  }
+      }
+
+  	  if(timer==10){
+  		  timer = 0;
+  		  CAN_Send_MotorFrame();
+  	  }
+  	  if (counter==1000){
+  		  HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
+  		  counter = 0;
+  	  }
+
+  	  if (s1 == HAL_OK && s2 == HAL_OK && s3 == HAL_OK && s4 == HAL_OK){
+  	      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_14, 1); // I2C_debug
+  	  }
+  	  if (CAN_checker){
+  	      HAL_GPIO_WritePin(GPIOC, GPIO_PIN_15, 1); // SPI_debug
+  	  }
+
+  	  if (CANSPI_Receive(&rx)){
+  		  CAN_failed_counter=0;
+  	      if (rx.frame.id == exp_pwm_msg){
+  	          uint16_t pwm_exp = rx.frame.data1;
+  	          int dir = rx.frame.data0;
+  	          if (pwm_exp <= 255 && pwm_exp>=0){
+  	        	  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_4,dir);
+  	        	  __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_3, pwm_exp*((dir + (~interrupted))&((~dir) + (~interrupted))));
+  	          }
+  	      }
+  	  	  else if (rx.frame.id == dr_pwm_msg){
+  	          uint16_t pwm_dr = rx.frame.data1;
+  	          int dir = rx.frame.data0;
+  	          if (pwm_dr <= 255 && pwm_dr >= 0){
+  	        	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,dir);
+  	        	  __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_4, pwm_dr*((dir + (~interrupted))&((~dir) + (~interrupted)))); //debanjan my goat
+  	          }
+  	      }
+  	  	  else if (rx.frame.id == heartbeat_msg){
+  	  		  heartbeater = rx.frame.data0 + rx.frame.data1;
+  	  		  beat_pls = true;
+  	  		  CAN_Heartbeat();
+  	  	  }
+  	  }
+
+  	  timer++;
+  	  counter++;
+  	  CAN_failed_counter++;
+  	  delay_us(100);
+    }
+  /* USER CODE END 3 */
+}

@@ -1,0 +1,60 @@
+mobility_node:
+  ros__parameters:
+    joy_topic: "/joy"
+    dt: 0.01
+
+    # per-wheel CAN topics - each wheel has its own message type
+    # (EncoderDataFL/FR/BL/BR), so each needs its own topic name (see
+    # mobility_node.py module docstring)
+    can_topic_fr: "/can/encoder_data_fr"
+    can_topic_bl: "/can/encoder_data_bl"
+    can_topic_fl: "/can/encoder_data_fl"
+    can_topic_br: "/can/encoder_data_br"
+
+    # VroomVroom geometry / scaling
+    half_width: 0.35
+    half_length: 0.45
+    speed_scalar: 250.0
+    r_scalar: 1.0
+    deadzone: 0.0
+
+    # steering (explicit/EKF) - shared across all 4 wheels for now
+    steer_t_motor: 0.15
+    steer_k_motor: 0.8
+    steer_q_diag: [0.001, 0.01]
+    steer_r_diag: [0.05, 0.02, 0.01]
+    steer_pid_kp: 1.0
+    steer_pid_ki: 0.0
+    steer_pid_kd: 0.0
+
+    # drive - shared across all 4 wheels for now
+    drive_max_ticks_per_dt: 50.0
+    drive_tick_counter_bits: 16
+    drive_pid_kp: 1.0
+    drive_pid_ki: 0.0
+    drive_pid_kd: 0.0
+
+    # per-wheel calibration - placeholders, NOT drive_controller.py's real
+    # 16.17/93.95/355.80/260.50 values (see mobility_node.py comment on the
+    # FR/BR/FL/BL ordering conflict before reusing those numbers)
+    mag_offsets: [0.0, 0.0, 0.0, 0.0]
+    quad_offsets: [0.0, 0.0, 0.0, 0.0]
+    steer_input_direction_flip: [false, false, false, false]
+    vroom_input_direction_flip: [false, false, false, false]
+    steer_output_direction_flip: [false, false, false, false]
+    vroom_output_direction_flip: [false, false, false, false]
+
+    # joystick smoothing
+    joy_x_acc: 0.5
+    joy_y_acc: 2.0
+
+    # drive power ramps down while a wheel is still turning toward its
+    # target angle - see mobility_node.py comment
+    drive_alignment_max_error_deg: 30.0
+
+    # zero-reference calibration trigger - see mobility_node.py module
+    # docstring. Leave at these neutral values; set at runtime via
+    # `ros2 param set /mobility_node zero_wheel_index <0-3>` or
+    # `ros2 param set /mobility_node zero_all_wheels true`.
+    zero_wheel_index: -1
+    zero_all_wheels: false

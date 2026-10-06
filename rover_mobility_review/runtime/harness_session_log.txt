@@ -1,0 +1,58 @@
+1790183482.511029 [10]    python3: config: //CycloneDDS/Domain/General: 'NetworkInterfaceAddress': deprecated element (file:///home/aaravb/.config/cyclonedds/cyclone.xml line 4)
+[INFO] [1790183482.598982405] [rover_mobility_review_harness]: harness_node started - reconstructing mobility_node.py math live
+[INFO] [1790183483.091738642] [rover_mobility_review_harness]: tick 50: [FR] steer=-0.00 drive=+0.00  [BR] steer=+0.00 drive=+0.00  [FL] steer=-0.00 drive=+0.00  [BL] steer=+0.00 drive=+0.00
+[INFO] [1790183483.591465480] [rover_mobility_review_harness]: tick 100: [FR] steer=-0.00 drive=+0.00  [BR] steer=+0.00 drive=+0.00  [FL] steer=-0.00 drive=+0.00  [BL] steer=+0.00 drive=+0.00
+[INFO] [1790183484.091595967] [rover_mobility_review_harness]: tick 150: [FR] steer=-0.00 drive=+0.00  [BR] steer=+0.00 drive=+0.00  [FL] steer=-0.00 drive=+0.00  [BL] steer=+0.00 drive=+0.00
+[INFO] [1790183484.591330909] [rover_mobility_review_harness]: tick 200: [FR] steer=-1.00 drive=+0.00  [BR] steer=-1.00 drive=+0.00  [FL] steer=-1.00 drive=+0.00  [BL] steer=-1.00 drive=+0.00
+[INFO] [1790183485.091090218] [rover_mobility_review_harness]: tick 250: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183485.590572384] [rover_mobility_review_harness]: tick 300: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183486.091807357] [rover_mobility_review_harness]: tick 350: [FR] steer=-1.00 drive=+0.00  [BR] steer=-1.00 drive=+0.00  [FL] steer=-1.00 drive=+0.00  [BL] steer=-1.00 drive=+0.00
+[INFO] [1790183488.822519224] [rover_mobility_review_harness]: tick 400: [FR] steer=-1.00 drive=+0.33  [BR] steer=-1.00 drive=+0.33  [FL] steer=-1.00 drive=+0.33  [BL] steer=-1.00 drive=+0.33
+[INFO] [1790183489.320646148] [rover_mobility_review_harness]: tick 450: [FR] steer=+1.00 drive=+0.86  [BR] steer=+1.00 drive=+0.86  [FL] steer=+1.00 drive=+0.86  [BL] steer=+1.00 drive=+0.86
+[INFO] [1790183489.821751548] [rover_mobility_review_harness]: tick 500: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183490.321202040] [rover_mobility_review_harness]: tick 550: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183490.821510494] [rover_mobility_review_harness]: tick 600: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=-1.00 drive=+0.00  [BL] steer=-1.00 drive=+0.27
+[INFO] [1790183491.321150229] [rover_mobility_review_harness]: tick 650: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=-1.00 drive=+0.00  [BL] steer=-1.00 drive=+0.27
+[INFO] [1790183491.821799950] [rover_mobility_review_harness]: tick 700: [FR] steer=-1.00 drive=+0.27  [BR] steer=-1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183492.321034352] [rover_mobility_review_harness]: tick 750: [FR] steer=-1.00 drive=+0.27  [BR] steer=-1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183492.821490809] [rover_mobility_review_harness]: tick 800: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183493.321144746] [rover_mobility_review_harness]: tick 850: [FR] steer=-1.00 drive=+0.00  [BR] steer=-1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183493.821674397] [rover_mobility_review_harness]: tick 900: [FR] steer=-1.00 drive=+0.00  [BR] steer=-1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183494.323359379] [rover_mobility_review_harness]: tick 950: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183494.821825309] [rover_mobility_review_harness]: tick 1000: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183495.323816353] [rover_mobility_review_harness]: tick 1050: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183495.821897579] [rover_mobility_review_harness]: tick 1100: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183496.320885611] [rover_mobility_review_harness]: tick 1150: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183496.820995959] [rover_mobility_review_harness]: tick 1200: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183497.321255332] [rover_mobility_review_harness]: tick 1250: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183497.821532069] [rover_mobility_review_harness]: tick 1300: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+[INFO] [1790183498.321512416] [rover_mobility_review_harness]: tick 1350: [FR] steer=+1.00 drive=+0.00  [BR] steer=+1.00 drive=+0.00  [FL] steer=+1.00 drive=+0.00  [BL] steer=+1.00 drive=+0.00
+Traceback (most recent call last):
+  File "/home/aaravb/rover_ws/src/rover_mobility_review/runtime/harness_node.py", line 182, in main
+    rclpy.spin(node)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 229, in spin
+    executor.spin_once()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 751, in spin_once
+    self._spin_once_impl(timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 740, in _spin_once_impl
+    handler, entity, node = self.wait_for_ready_callbacks(timeout_sec=timeout_sec)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 723, in wait_for_ready_callbacks
+    return next(self._cb_iter)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/executors.py", line 624, in _wait_for_ready_callbacks
+    raise ExternalShutdownException()
+rclpy.executors.ExternalShutdownException
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/aaravb/rover_ws/src/rover_mobility_review/runtime/harness_node.py", line 191, in <module>
+    sys.exit(main())
+  File "/home/aaravb/rover_ws/src/rover_mobility_review/runtime/harness_node.py", line 187, in main
+    rclpy.shutdown()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/__init__.py", line 130, in shutdown
+    _shutdown(context=context)
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/utilities.py", line 58, in shutdown
+    return context.shutdown()
+  File "/opt/ros/humble/local/lib/python3.10/dist-packages/rclpy/context.py", line 102, in shutdown
+    self.__context.shutdown()
+rclpy._rclpy_pybind11.RCLError: failed to shutdown: rcl_shutdown already called on the given context, at ./src/rcl/init.c:241
