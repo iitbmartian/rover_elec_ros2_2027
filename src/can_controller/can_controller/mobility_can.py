@@ -24,8 +24,6 @@ import random
 # Just maintaining arrays of most recently received values and publishing to encoder topic whenever
 # any value changes- i.e. whenever I get new encoder data on the bus
 
-# Should move all publishers into one common thread publishing at fixed rate and only use the can receiver function to update values whenever they come.
-
 # no need to use four diff message types for each encoder data topic
 
 # send limit switch data on ls_fl, ls_fr, ... and it'll be two integers (0/1, 0/1)
@@ -90,7 +88,7 @@ class MobilityCan(Node):
         self.sensor_check_bl = self.create_publisher(Int8MultiArray, 'sensor_check_bl', 10)
         self.sensor_check_br = self.create_publisher(Int8MultiArray, 'sensor_check_br', 10)
 
-        self.heartbeat_thread = threading.Thread(target=self.heartbeater, daemon=True)
+        self.heartbeat_thread = threading.Thread(target=self.heartbeaterr, daemon=True)
         self.heartbeat_thread.start()
         self.publisher_thread = threading.Thread(target=self.pubthread, daemon=True)
         self.publisher_thread.start()
@@ -115,7 +113,7 @@ class MobilityCan(Node):
 
         self.can_bus.publish(can_message)
 
-    def heartbeater(self):
+    def heartbeaterr(self):
         while rclpy.ok():
             a = random.randint(0,252)
             b = random.randint(0,252)

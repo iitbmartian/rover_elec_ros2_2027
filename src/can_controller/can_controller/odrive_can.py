@@ -29,6 +29,14 @@ class ODriveCan(Node):
         self.bldc1 = arb.BLDC1
         self.bldc2 = arb.BLDC2
 
+        # 1 = bldc1 (shoulder), 2 = bldc2 (elbow). Default is both; set e.g. [1] to
+        # bring up the pipeline with only one ODrive attached.
+        self.declare_parameter('active_axes', [1, 2])
+        active = set(self.get_parameter('active_axes').value)
+        self.active = [1 in active, 2 in active]
+        if not any(self.active):
+            raise ValueError("active_axes must contain 1 and/or 2")
+
         # per-axis heartbeat state, refreshed on every heartbeat (not latched)
         self.axis_error = [0, 0]
         self.axis_state = [0, 0]
@@ -57,9 +65,12 @@ class ODriveCan(Node):
                 and self.axis_error[i] == 0
                 and self.procedure_result[i] == PROCEDURE_RESULT_SUCCESS)
 
+    def all_active_ready(self):
+        return all(self.axis_ready(i) for i in range(2) if self.active[i])
+
     def arm_position_command(self, msg):
         with self.check_lock:
-            if self.axis_ready(0) and self.axis_ready(1):
+            if self.all_active_ready():
                 self.pos1 = msg.pos1
                 self.pos2 = msg.pos2
                 self.vel1 = msg.vel1
@@ -73,30 +84,34 @@ class ODriveCan(Node):
                 vel1_ff = max(-32768, min(32767, round(self.vel1 * 1000)))
                 vel2_ff = max(-32768, min(32767, round(self.vel2 * 1000)))
 
-                self.send_to_bus(self.bldc1, arb.set_input_pos, data=list(struct.pack('<fhh',self.pos1,vel1_ff,0)))
-                self.send_to_bus(self.bldc2, arb.set_input_pos, data=list(struct.pack('<fhh',self.pos2,vel2_ff,0)))
+                if self.active[0]:
+                    self.send_to_bus(self.bldc1, arb.set_input_pos, data=list(struct.pack('<fhh',self.pos1,vel1_ff,0)))
+                if self.active[1]:
+                    self.send_to_bus(self.bldc2, arb.set_input_pos, data=list(struct.pack('<fhh',self.pos2,vel2_ff,0)))
 
     def arm_initializer(self):
+        nodes = [n for n, a in zip((self.bldc1, self.bldc2), self.active) if a]
+
         # step 1. set to closed loop control
-        self.send_to_bus(self.bldc1, arb.set_axis_state, data=list(struct.pack('<I',8)))
-        self.send_to_bus(self.bldc2, arb.set_axis_state, data=list(struct.pack('<I',8)))
+        for n in nodes:
+            self.send_to_bus(n, arb.set_axis_state, data=list(struct.pack('<I',8)))
 
         # step 2. set to position control
-        self.send_to_bus(self.bldc1, arb.set_controller_mode, data=list(struct.pack('<II',3,1)))
-        self.send_to_bus(self.bldc2, arb.set_controller_mode, data=list(struct.pack('<II',3,1)))
+        for n in nodes:
+            self.send_to_bus(n, arb.set_controller_mode, data=list(struct.pack('<II',3,1)))
 
         # step 3. check if step 1 worked
         while True:
             with self.check_lock:
-                if(self.axis_ready(0) and self.trigger_init_msg_once[0]):
+                if(self.active[0] and self.axis_ready(0) and self.trigger_init_msg_once[0]):
                     self.get_logger().info("bldc 1 initialized")
                     self.trigger_init_msg_once[0] = 0
 
-                if(self.axis_ready(1) and self.trigger_init_msg_once[1]):
+                if(self.active[1] and self.axis_ready(1) and self.trigger_init_msg_once[1]):
                     self.get_logger().info("bldc 2 initialized")
                     self.trigger_init_msg_once[1] = 0
 
-                if(self.axis_ready(0) and self.axis_ready(1)): break
+                if self.all_active_ready(): break
 
             time.sleep(0.1)
 
@@ -106,6 +121,8 @@ class ODriveCan(Node):
         data = msg.data
 
         for i, bldc_node in enumerate([self.bldc1, self.bldc2]):
+            if not self.active[i]:
+                continue
             if node == bldc_node and msgtype == arb.heartbeat_odr:
                 # data = [4 bytes Axis_Error, 1 byte Axis_State,
                 #         1 byte Procedure_Result, 1 byte Trajectory_Done_Flag]

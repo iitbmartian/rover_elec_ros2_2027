@@ -1,0 +1,66 @@
+# =============================================================================
+# joystick_mapping.yaml - joystick button/axis mapping for the arm
+# Location (source): src/joy_node/config/joystick_mapping.yaml
+# Installed copy:    install/joy_node/share/joy_node/config/joystick_mapping.yaml
+#
+# HOW TO USE
+#   Build once:   colcon build --packages-select joy_node && source install/setup.bash
+#   IK mode (joystick moves the end effector; default):
+#       ros2 launch joy_node joystick.launch.py mode:=ik
+#   Direct velocity mode (joystick axes -> shoulder/elbow ODrives + linear base):
+#       ros2 launch joy_node joystick.launch.py mode:=velocity
+#   Use a different file without rebuilding:
+#       ros2 launch joy_node joystick.launch.py mode:=velocity config_file:=/path/to/my.yaml
+#
+# EDITING
+#   The launch uses the INSTALLED copy unless you pass config_file:=. After editing
+#   the source file, either rebuild (colcon build --packages-select joy_node) or
+#   build with `--symlink-install` once so edits apply on relaunch.
+#   Axis/button numbers are indices into sensor_msgs/Joy (check with `ros2 topic echo /joy`).
+#   Set an index to -1 to disable that input.
+# =============================================================================
+
+# Joystick mapping used by joy_translator (ik mode) and joy_velocity (velocity mode).
+# Edit freely, then relaunch. Axis/button numbers are indices into sensor_msgs/Joy.
+# To disable an input set its index to -1.
+
+general:
+  joy_timeout_s: 0.5     # no Joy message for this long -> send zero velocity
+  rate_hz: 50.0          # command stream rate in velocity mode
+  deadman_button: 4      # must be held for velocity mode to move; -1 disables
+
+# ---- Direct velocity mode (mode:=velocity) ----
+# max_vel: shoulder/elbow in motor turns/s, base in m/s
+velocity_mode:
+  shoulder:
+    node_id: 6           # arb.BLDC1
+    axis: 1              # joystick y (forward/back)
+    sign: 1.0
+    deadzone: 0.05
+    max_vel: 0.5
+  elbow:
+    node_id: 7           # arb.BLDC2
+    axis: 0              # joystick x (left/right)
+    sign: 1.0
+    deadzone: 0.05
+    max_vel: 0.5
+  base:
+    node_id: 8           # arb.Base (linear rail DC motor)
+    axis: 3              # joystick z
+    sign: 1.0
+    deadzone: 0.05
+    max_vel: 0.1
+
+# ---- IK mode (mode:=ik): end-effector velocity ----
+ik_mode:
+  deadzone: 0.05
+  max_xyz_vel: 0.1       # m/s
+  max_wrist_vel: 0.1     # rad/s
+  axis_forward_back: 1
+  axis_left_right: 0
+  axis_z: 3
+  forward_sign: 1.0
+  right_sign: 1.0
+  z_sign: 1.0
+  axis_wrist_roll: 5
+  axis_wrist_pitch: 6

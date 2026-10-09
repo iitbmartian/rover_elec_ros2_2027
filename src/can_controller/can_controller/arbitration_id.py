@@ -86,6 +86,7 @@ set_input_pos = 0b01100 # 0CC#0000000000000000
 set_input_vel = 0b01101
 set_input_torque = 0b01110
 reboot = 0b10110
+clear_errors = 0b11000 # payload: <B identify (0)
 
 # Linear Base
 Base = 8
