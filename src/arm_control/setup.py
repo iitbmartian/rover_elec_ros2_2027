@@ -33,6 +33,7 @@ setup(
             'arm_ik = arm_control.arm_ik:main',
             'joint_state_bridge = arm_control.joint_state_bridge:main',
             'wrist_controller = arm_control.wrist_controller:main',
+            'shoulder_only_test = arm_control.shoulder_only_test:main',
         ],
     },
 )

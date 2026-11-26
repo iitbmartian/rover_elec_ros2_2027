@@ -11,13 +11,6 @@ import time
 
 bit_rate = 500000
 
-# (msgtype -> node ids) of heartbeat replies routed to the dedicated 'heartbeat_replies' topic.
-# Keyed by node too, since msgtype values overlap between node families (e.g. ODrive msgtype 6).
-# Add an entry here when another subsystem gets a handshake.
-HEARTBEAT_REPLIES = {
-    arb.mobility_heartbeated: {arb.FR, arb.FL, arb.BR, arb.BL},
-}
-
 channel = "vcan0"
 interface = "socketcan"
 
@@ -26,6 +19,12 @@ interface = "socketcan"
 # this node is agnpstic of everything except the can bus now
 # 1. The bus status thing doesn't really work I need to find a better way to do that.
 # 2. Maybe we don't wanna have a buffer full of stale messages.
+# 3. absolutely cannot have all messages on one can bus topic- split it into multiple either at this level or remove the can messages received 
+# abstraction entirely and have everything run one level down.
+
+# testing:
+# ttl -> give commands and disconnect ros2 and it should stop
+# heartbeat -> test heartbeat (stop everything when heartbeat stops)
 
 class CAN_Controller(Node):
     def __init__(self):
@@ -41,8 +40,6 @@ class CAN_Controller(Node):
         self.publisher_debug = self.create_publisher(Bool, 'bus_status', 10)
         self.can_bus = self.create_subscription(CanMessage, 'can_bus_to_controller', self.can_bus_callback, 10)
         self.can_received = self.create_publisher(CanMessage, 'can_messages_received', 10)
-        # heartbeat replies bypass the shared RX topic so they never queue behind bulk traffic
-        self.heartbeat_received = self.create_publisher(CanMessage, 'heartbeat_replies', 50)
 
         self.can_queue = queue.PriorityQueue()
         self.queue_counter = 0
@@ -96,10 +93,7 @@ class CAN_Controller(Node):
             can_message.msgtype = msgtype
             can_message.data = data
 
-            if node in HEARTBEAT_REPLIES.get(msgtype, ()):
-                self.heartbeat_received.publish(can_message)
-            else:
-                self.can_received.publish(can_message)
+            self.can_received.publish(can_message)
 
     def destroy_node(self):
         self.bus.shutdown()

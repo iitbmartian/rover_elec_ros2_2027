@@ -14,6 +14,7 @@ class ODriveTest(Node):
 
     def timer_cb(self):
         posCmd = BLDCPositionCommand()
+        posCmd.pos_vel = True # radians??????
         posCmd.pos1 = self.v1
         posCmd.pos2 = self.v2
 

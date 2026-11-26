@@ -4,18 +4,29 @@ from can_interfaces.msg import CanMessage
 from can_interfaces.msg import BLDCPositionCommand
 import can_controller.arbitration_id as arb
 
-import can
 import threading
 import struct
 import time
+import math
 
-# ODrive S1 heartbeat frames (7 bytes):
-#   bytes 0-3: Axis_Error (uint32 bitfield, 0 = no error)
-#   byte  4:   Axis_State (uint8, 8 = CLOSED_LOOP_CONTROL)
-#   byte  5:   Procedure_Result (uint8, 0 = SUCCESS)
-#   byte  6:   Trajectory_Done_Flag (uint8)
+# heartbeat (0x001) -> 7 bytes of useful stuff -> bytes 0-3 => Axis_Error (0 = no error)
+#                                       byte 4 => Axis_State (e.g. 8 = closed loop control)
+#                                       byte 5 => Procedure_Result (0 = success)
+#                                       byte 6 => Trajectory_Done_Flag (0=false, 1=true)
+
 AXIS_STATE_CLOSED_LOOP_CONTROL = 8
 PROCEDURE_RESULT_SUCCESS = 0
+
+# Set_Controller_Mode values (payload '<II' control_mode, input_mode)
+CONTROL_MODE_VELOCITY = 2
+CONTROL_MODE_POSITION = 3
+INPUT_MODE_PASSTHROUGH = 1
+
+# BLDCPositionCommand is in joint radians / rad-s. The ODrives work in motor turns, so every
+# outgoing value is converted with:
+#   motor_turns = direction * joint_rad * gear_ratio / (2*pi) + zero_offset_turns
+# gear_ratio = motor turns per joint turn (shoulder 100:1, elbow 50:1). zero_offset/direction
+# assume ODrive position 0 == URDF joint 0 with the same positive direction until calibrated.
 
 class ODriveCan(Node):
     def __init__(self):
@@ -32,12 +43,22 @@ class ODriveCan(Node):
         # 1 = bldc1 (shoulder), 2 = bldc2 (elbow). Default is both; set e.g. [1] to
         # bring up the pipeline with only one ODrive attached.
         self.declare_parameter('active_axes', [1, 2])
+
         active = set(self.get_parameter('active_axes').value)
         self.active = [1 in active, 2 in active]
         if not any(self.active):
             raise ValueError("active_axes must contain 1 and/or 2")
 
-        # per-axis heartbeat state, refreshed on every heartbeat (not latched)
+        self.declare_parameter('gear_ratios', [100.0, 50.0])       # [shoulder, elbow]
+        self.declare_parameter('zero_offsets_turns', [0.0, 0.0])   # motor turns at joint 0
+        self.declare_parameter('directions', [1.0, 1.0])           # +1 / -1
+        self.gear_ratios = list(self.get_parameter('gear_ratios').value)
+        self.zero_offsets = list(self.get_parameter('zero_offsets_turns').value)
+        self.directions = list(self.get_parameter('directions').value)
+
+        # control mode last sent to each ODrive (arm_initializer starts them in position mode)
+        self.control_mode = [CONTROL_MODE_POSITION, CONTROL_MODE_POSITION]
+
         self.axis_error = [0, 0]
         self.axis_state = [0, 0]
         self.procedure_result = [0, 0]
@@ -68,26 +89,48 @@ class ODriveCan(Node):
     def all_active_ready(self):
         return all(self.axis_ready(i) for i in range(2) if self.active[i])
 
+    def joint_to_motor_turns(self, i, rad):
+        return self.directions[i] * rad * self.gear_ratios[i] / (2 * math.pi) + self.zero_offsets[i]
+
+    def joint_to_motor_turns_per_s(self, i, rad_s):
+        return self.directions[i] * rad_s * self.gear_ratios[i] / (2 * math.pi)
+
+    def set_control_mode(self, i, node, mode):
+        # only sent when the commanded mode changes, so position <-> velocity switching is free
+        if self.control_mode[i] != mode:
+            self.send_to_bus(node, arb.set_controller_mode,
+                             data=list(struct.pack('<II', mode, INPUT_MODE_PASSTHROUGH)))
+            self.control_mode[i] = mode
+
     def arm_position_command(self, msg):
         with self.check_lock:
-            if self.all_active_ready():
-                self.pos1 = msg.pos1
-                self.pos2 = msg.pos2
-                self.vel1 = msg.vel1
-                self.vel2 = msg.vel2
+            if not self.all_active_ready():
+                return
 
-                # Vel_FF/Torque_FF are int16, scaled by input_vel_scale/
-                # input_torque_scale (default 1000, i.e. 0.001 rev/s and
-                # 0.001 Nm per LSB). placo has no torque output, so
-                # Torque_FF stays zero; Vel_FF reuses placo's rad/s value
-                # as-is (best-guess units, same deferred-units call as pos1/pos2).
-                vel1_ff = max(-32768, min(32767, round(self.vel1 * 1000)))
-                vel2_ff = max(-32768, min(32767, round(self.vel2 * 1000)))
+            self.pos1 = msg.pos1
+            self.pos2 = msg.pos2
+            self.vel1 = msg.vel1
+            self.vel2 = msg.vel2
 
-                if self.active[0]:
-                    self.send_to_bus(self.bldc1, arb.set_input_pos, data=list(struct.pack('<fhh',self.pos1,vel1_ff,0)))
-                if self.active[1]:
-                    self.send_to_bus(self.bldc2, arb.set_input_pos, data=list(struct.pack('<fhh',self.pos2,vel2_ff,0)))
+            for i, (node, pos, vel) in enumerate(((self.bldc1, self.pos1, self.vel1),
+                                                  (self.bldc2, self.pos2, self.vel2))):
+                if not self.active[i]:
+                    continue
+                vel_turns = self.joint_to_motor_turns_per_s(i, vel)
+
+                if msg.pos_vel:
+                    # position control: Set_Input_Pos '<fhh' = pos [turns], Vel_FF, Torque_FF.
+                    # Vel_FF is int16 scaled by input_vel_scale (1000 -> 0.001 turns/s per LSB);
+                    # placo gives no torque, so Torque_FF = 0.
+                    self.set_control_mode(i, node, CONTROL_MODE_POSITION)
+                    vel_ff = max(-32768, min(32767, round(vel_turns * 1000)))
+                    self.send_to_bus(node, arb.set_input_pos,
+                                     data=list(struct.pack('<fhh', self.joint_to_motor_turns(i, pos), vel_ff, 0)))
+                else:
+                    # velocity control (joystick): Set_Input_Vel '<ff' = vel [turns/s], Torque_FF
+                    self.set_control_mode(i, node, CONTROL_MODE_VELOCITY)
+                    self.send_to_bus(node, arb.set_input_vel,
+                                     data=list(struct.pack('<ff', vel_turns, 0.0)))
 
     def arm_initializer(self):
         nodes = [n for n, a in zip((self.bldc1, self.bldc2), self.active) if a]
@@ -98,7 +141,7 @@ class ODriveCan(Node):
 
         # step 2. set to position control
         for n in nodes:
-            self.send_to_bus(n, arb.set_controller_mode, data=list(struct.pack('<II',3,1)))
+            self.send_to_bus(n, arb.set_controller_mode, data=list(struct.pack('<II', CONTROL_MODE_POSITION, INPUT_MODE_PASSTHROUGH)))
 
         # step 3. check if step 1 worked
         while True:

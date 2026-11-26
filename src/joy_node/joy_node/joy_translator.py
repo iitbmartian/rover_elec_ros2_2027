@@ -3,6 +3,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import Joy
 from general_interfaces.msg import MasterArmCommand
 from general_interfaces.msg import MasterWristCommand
+from can_interfaces.msg import DriveCommand
 from joy_node.mapping import load_mapping, axis_value
 
 class JoyTranslator(Node):
@@ -15,6 +16,7 @@ class JoyTranslator(Node):
         self.joy_sub = self.create_subscription(Joy, 'joy', self.joy_callback, 10)
         self.arm_cmd_pub = self.create_publisher(MasterArmCommand, 'master_arm_command', 10)
         self.wrist_cmd_pub = self.create_publisher(MasterWristCommand, 'master_wrist_commands', 10)
+        self.mob_cmd_pub = self.create_publisher(DriveCommand, 'drive_command', 10)
 
     def joy_callback(self, msg: Joy):
         c = self.cfg
@@ -28,22 +30,25 @@ class JoyTranslator(Node):
         max_wrist_vel = c['max_wrist_vel']
         forward_sign, right_sign, z_sign = c['forward_sign'], c['right_sign'], c['z_sign']
 
-        cmd_arm = MasterArmCommand()
-        cmd_arm.pos_vel = False
-        cmd_arm.x = forward_sign * forward * max_xyz_vel
-        cmd_arm.y = right_sign * right * max_xyz_vel
-        cmd_arm.z = z_sign * z_vel * max_xyz_vel
+        # cmd_arm = MasterArmCommand()
+        # cmd_arm.pos_vel = False
+        # cmd_arm.x = forward_sign * forward * max_xyz_vel
+        # cmd_arm.y = right_sign * right * max_xyz_vel
+        # cmd_arm.z = z_sign * z_vel * max_xyz_vel
 
-        # self.get_logger().info(str(cmd_arm))
-        self.arm_cmd_pub.publish(cmd_arm)
+        # # self.get_logger().info(str(cmd_arm))
+        # self.arm_cmd_pub.publish(cmd_arm)
 
-        cmd_wrist = MasterWristCommand()
-        cmd_wrist.pos_vel = False
-        cmd_wrist.roll = roll * max_wrist_vel
-        cmd_wrist.pitch = pitch * max_wrist_vel
+        # cmd_wrist = MasterWristCommand()
+        # cmd_wrist.pos_vel = False
+        # cmd_wrist.roll = roll * max_wrist_vel
+        # cmd_wrist.pitch = pitch * max_wrist_vel
 
-        self.wrist_cmd_pub.publish(cmd_wrist)
+        # self.wrist_cmd_pub.publish(cmd_wrist)
 
+        cmd_drive = DriveCommand()
+        cmd_drive.drive_direction = [forward_sign]*4
+        cmd_drive.explicit_direction = []
 
 
 def main(args=None):

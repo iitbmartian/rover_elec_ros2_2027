@@ -55,6 +55,11 @@ class Arm_IK(Node):
         self.get_logger().info(str(ee_pos_now))
         self.velocity_ff = np.zeros(3)
 
+        # True: absolute position target (pos_vel=true command) -> ODrives in position control.
+        # False: joystick end-effector velocity -> ODrives in velocity control. Starts False so the
+        # arm holds still (zero velocity) instead of driving to the model's initial pose.
+        self.position_mode = False
+
         self.arm_cmd_sub = self.create_subscription(MasterArmCommand, 'master_arm_command', self.command_callback, 10)
         self.arm_position_command = self.create_publisher(BLDCPositionCommand, 'arm_position_commands', 10)
         self.base_velocity_command = self.create_publisher(BasePositionCommand, 'base_commands', 10)
@@ -67,21 +72,28 @@ class Arm_IK(Node):
         z = msg.z 
 
         if msg.pos_vel:
+            self.position_mode = True
             self.target_world = np.array([x,y,z])
             self.velocity_ff = np.zeros(3)
             self.get_logger().info("new position command for arm")
         else:
+            self.position_mode = False
             self.velocity_ff = np.array([x,y,z])
             self.get_logger().info("new velocity command for arm")
 
     def control_loop(self):
-        if np.any(self.velocity_ff):
-            self.target_world = self.target_world + self.velocity_ff * self.dt
+        self.arm.update_kinematics()
+
+        if not self.position_mode:
+            # Target leash: re-anchor the target to where the end effector actually is every tick,
+            # so the target is never more than one tick's worth of motion ahead of the arm. Holding
+            # the stick against the edge of the workspace can't wind the target up, releasing the
+            # stick (velocity 0) stops the arm immediately, and reversing responds immediately.
+            ee_now = self.arm.get_T_world_frame('link_5')[:3, 3]
+            self.target_world = ee_now + self.velocity_ff * self.dt
 
         self.position_task.target_world = self.target_world
         self.position_task.dtarget_world = self.velocity_ff
-
-        self.arm.update_kinematics()
 
         self.get_logger().info(
             f"Current: {self.arm.get_T_world_frame('link_5')[:3, 3]}, "
@@ -100,6 +112,7 @@ class Arm_IK(Node):
         elbow = np.clip(elbow, *self.joint_limits["joint_3"])
 
         out_BLDC = BLDCPositionCommand()
+        out_BLDC.pos_vel = self.position_mode
         out_BLDC.pos1 = shoulder
         out_BLDC.pos2 = elbow
         out_BLDC.vel1 = shoulder_vel
